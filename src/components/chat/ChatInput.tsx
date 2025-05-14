@@ -17,14 +17,25 @@ const ChatInput: React.FC<Props> = ({ message, setMessage, onSend }) => {
   };
 
   return (
-    <textarea
-      className="w-full p-2 border rounded resize-none focus:outline-none focus:ring"
-      rows={2}
-      placeholder="Type a message..."
-      value={message}
-      onChange={(e) => setMessage(e.target.value)}
-      onKeyDown={handleKeyDown}
-    />
+  
+
+    <div className="relative w-full">
+  <textarea
+    className="w-full p-2 pr-20 border rounded resize-none focus:outline-none focus:ring"
+    rows={2}
+    placeholder="Type a message..."
+    value={message}
+    onChange={(e) => setMessage(e.target.value)}
+    onKeyDown={handleKeyDown}
+  />
+  
+  <button
+    onClick={onSend}
+    className="absolute right-2 mt-[15px] px-3 py-1 text-white bg-blue-500 rounded hover:bg-blue-600"
+  >
+    Send
+  </button>
+</div>
   );
 };
 
